@@ -37,9 +37,6 @@
             <input required type="password" name="pass" class="input">
         </div>
     </div>
-    <div class="text-center small" style="color: #0ffaf6;">Don't have an account?
-        <a href="{{ url('/user/signup') }}">Create Account</a>
-    </div>
     <button name="sign_in" type="submit" class="btn">Login</button>
 </form>
 @endsection

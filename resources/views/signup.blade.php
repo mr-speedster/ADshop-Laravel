@@ -1,7 +1,8 @@
 @extends('layout.app')
 @section('title','ADshop | SignUp')
 @section('form')
-<form method="POST">
+<form method="POST" action="{{ route('userform') }}">
+    @csrf
     <div class="words word-2">
         <span>A</span>
         <span>D</span>
@@ -16,7 +17,10 @@
         </div>
         <div class="div">
             <h5>Username</h5>
-            <input required type="text" name="user_name" class="input">
+            <input required type="text" id="user_name" name="user_name" class="input">
+            @error('user_name')
+                <small class="text-danger">Name has atleast 2 characters</small>
+            @enderror
         </div>
     </div>
     <div class="input-div one">
@@ -27,7 +31,7 @@
         </div>
         <div class="div">
             <h5>email</h5>
-            <input required type="text" name="user_email" class="input">
+            <input required type="text" id="user_email" name="user_email" class="input">
         </div>
     </div>
     <div class="input-div pass">
@@ -36,7 +40,10 @@
         </div>
         <div class="div">
             <h5>Password</h5>
-            <input required id="user_pass" type="password" name="user_pass" class="input">
+            <input required id="user_pass" type="password" id="user_pass" name="user_pass" class="input">
+            @error('user_pass')
+                <small class="text-danger">minimum 8 character</small>
+            @enderror
         </div>
     </div>
     <div class="input-div pass">
@@ -45,12 +52,12 @@
         </div>
         <div class="div">
             <h5>Conform</h5>
-            <input required id="conform_pass" type="password" name="conform_pass" class="input">
+            <input required id="conform_pass" type="password" id="conform_pass" name="conform_pass" class="input">
         </div>
     </div>
     
     <div class="text-center small">
-        <a href="{{ url('/user/signin')}}">Alredy have an account?</a>
+        <a href="{{ route('signup')}}">Alredy have an account?</a>
     </div>
     <button name="sign_up" onclick="conformPass()" type="submit" class="btn">Login</button>
 </form>

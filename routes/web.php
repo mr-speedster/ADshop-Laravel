@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[ADshopController::class,'shop']);
+Route::get('/',[ADshopController::class,'shop'])->name('shop');
 
-Route::get('/user/signin',[ADshopController::class,'signin']);
+Route::get('/user/signup',[ADshopController::class,'signup'])->name('signup');
 
-Route::get('/user/signup',[ADshopController::class,'signup']);
+Route::get('/user/signin',[ADshopController::class,'signin'])->name('signin');
 
-Route::get('/admin',[ADshopController::class,'admin']);
+Route::post('/user/data',[ADshopController::class,'userData'])->name('userform');
+
+Route::get('/admin',[ADshopController::class,'admin'])->name('adminSignin');
 
 Route::get('/admin/adminpage',[ADshopController::class,'adminPage']);
 
