@@ -25,7 +25,7 @@
             <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
                 <p class="font-rale font-size-12 text-black-50 m-0">Ajith D | keralite | Web Developer | <a href = "mailto: abc@example.com">ajithd78564@gmail.com</a></p>
                 <div class="font-rale font-size-14">
-                    <a href="{{url('/signin')}}" class="px-3 border-right border-left text-dark">SignIn</a>
+                    <a href="{{url('/user/signin')}}" class="px-3 border-right border-left text-dark">SignIn</a>
                     <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
                 </div>
             </div>

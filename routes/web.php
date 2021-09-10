@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[ADshopController::class,'shop']);
 
-Route::get('/signin',[ADshopController::class,'signin']);
+Route::get('/user/signin',[ADshopController::class,'signin']);
 
-Route::get('/signup',[ADshopController::class,'signup']);
+Route::get('/user/signup',[ADshopController::class,'signup']);
 
-Route::get('/admin',[ADshopController::class,'admin']);
+Route::get('/admin/signin',[ADshopController::class,'admin']);
+
+Route::get('/admin/signup',[ADshopController::class,'admin']);
 
 Route::get('/adminpage',[ADshopController::class,'adminPage']);
 

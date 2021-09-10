@@ -50,7 +50,7 @@
     </div>
     
     <div class="text-center small">
-        <a href="{{ url('/signin')}}">Alredy have an account?</a>
+        <a href="{{ url('/user/signin')}}">Alredy have an account?</a>
     </div>
     <button name="sign_up" onclick="conformPass()" type="submit" class="btn">Login</button>
 </form>
