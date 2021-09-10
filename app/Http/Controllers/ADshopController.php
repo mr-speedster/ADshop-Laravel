@@ -32,16 +32,16 @@ class ADshopController extends Controller
         ]);
 
         //dd($validate);
-        if ($request->user_pass!==$request->conform_pass) {
-            return redirect('route("shop")');
+        if ($request->post('user_pass')!==$request->post('conform_pass')) {
+            return redirect('/user/signup')->withErrors('Password not match');
         }
-        //$users=new ShopUser();
-        //$users->user_name=$request->post('user_name');
-        //$users->user_pass=$request->post('user_pass');
-        //$users->user_email=$request->post('user_email');
-        //$users->save();
+        $users=new ShopUser();
+        $users->user_name=$request->post('user_name');
+        $users->user_pass=$request->post('user_pass');
+        $users->user_email=$request->post('user_email');
+        $users->save();
         
-        return redirect('route("shop")');
+        return redirect('/');
     }
     
     public function admin()

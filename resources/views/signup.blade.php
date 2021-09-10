@@ -18,9 +18,6 @@
         <div class="div">
             <h5>Username</h5>
             <input required type="text" id="user_name" name="user_name" class="input">
-            @error('user_name')
-                <small class="text-danger">Name has atleast 2 characters</small>
-            @enderror
         </div>
     </div>
     <div class="input-div one">
@@ -53,6 +50,9 @@
         <div class="div">
             <h5>Conform</h5>
             <input required id="conform_pass" type="password" id="conform_pass" name="conform_pass" class="input">
+            @if($errors->any())
+                <small class="text-danger">{{ implode('', $errors->all(':message')) }}</small>
+            @endif
         </div>
     </div>
     
