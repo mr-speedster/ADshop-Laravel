@@ -1,5 +1,7 @@
 @extends('layout.app')
 @section('title','ADshop | SignUp')
+@section('path','/admin')
+@section('name','Admin')
 @section('form')
 <form method="POST">
     <div class="words word-2">

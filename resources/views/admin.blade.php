@@ -1,7 +1,7 @@
 @extends('layout.app')
-@section('title','ADshop | SignIn')
-@section('path','/admin')
-@section('name','Admin')
+@section('title','ADshop | AdminSignIn')
+@section('path','/user/signin')
+@section('name','User')
 @section('form')
 <form method="POST">
     <div class="words word-2">
@@ -21,7 +21,7 @@
                 </svg></i>
         </div>
         <div class="div">
-            <h5>email</h5>
+            <h5>Admin:email</h5>
             <input required type="text" name="email" class="input">
         </div>
     </div>
@@ -30,7 +30,7 @@
             <i class="fas fa-lock"></i>
         </div>
         <div class="div">
-            <h5>Password</h5>
+            <h5>Admin:Password</h5>
             <input required type="password" name="pass" class="input">
         </div>
     </div>

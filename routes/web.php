@@ -20,9 +20,7 @@ Route::get('/user/signin',[ADshopController::class,'signin']);
 
 Route::get('/user/signup',[ADshopController::class,'signup']);
 
-Route::get('/admin/signin',[ADshopController::class,'admin']);
+Route::get('/admin',[ADshopController::class,'admin']);
 
-Route::get('/admin/signup',[ADshopController::class,'admin']);
-
-Route::get('/adminpage',[ADshopController::class,'adminPage']);
+Route::get('/admin/adminpage',[ADshopController::class,'adminPage']);
 
