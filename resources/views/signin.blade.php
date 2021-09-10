@@ -1,7 +1,10 @@
 @extends('layout.app')
 @section('title','ADshop | SignIn')
-@section('path','/admin')
-@section('name','Admin')
+@section('admin-user')
+<div style="float: right;margin: 2%" class="container-fluid">
+    <a class="nav-link" href="/admin"><h3>Admin</h3></a>
+</div>
+@endsection
 @section('form')
 <form method="POST">
     <div class="words word-2">

@@ -13,9 +13,7 @@
 
 <body>
     <img class="wave" src="../assets/icons/wave.png">
-	<div style="float: right;margin: 2%" class="container-fluid">
-		<a class="nav-link" href="@yield('path')"><h3>@yield('name')</h3></a>
-	</div>
+	@yield('admin-user')
 	<div class="container">
 		<div class="img">
             <img src="images/lion.svg" alt="" class="img-fluid">
