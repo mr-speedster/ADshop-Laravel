@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ShopAdmin;
 use App\Models\ShopUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +24,7 @@ class ADshopController extends Controller
         return view('signup');
     }
 
-    public function userData(Request $request)
+    public function userSignup(Request $request)
     {
         //dd($request);
 
@@ -42,11 +43,11 @@ class ADshopController extends Controller
         $users->user_email=$request->post('user_email');
         $email=$request->post('user_email');
 
-        $email_valiation=$users
+        $email_validation=$users
             ->where('user_email', '=', $email)
             ->count();
 
-        if ($email_valiation>0) {
+        if ($email_validation>0) {
             return redirect('/user/signup')->withErrors('email Already Exist!');
         }else{
            
@@ -54,13 +55,58 @@ class ADshopController extends Controller
             return redirect('/');
         }
     }
+    public function userSignin(Request $request)
+    {
+        $user_data=$request->input();
+        //dd($user_data);
+        $request->session()->put('user_email',$user_data['email']);
+        //dd(session('user_email'));
+        
+        $email_login=$request->post('email');
+        $password=$request->post('pass');
+
+        $login=new ShopUser();
+        $user_validate=$login
+        ->where('user_email','=',$email_login)
+        ->where('user_pass','=',$password)
+        ->count();
+
+        if ($user_validate==1) {
+            return redirect('/');
+        }else{
+            return redirect('/user/signin')->withErrors('email not exist ,please SignUp');
+        }
+    }
     
     public function admin()
     {
         return view('admin');
     }
+    
+    public function adminLogin(Request $request)
+    {
+        $admin_data=$request->input();
+        //dd($admin_data);
+        $request->session()->put('admin_email',$admin_data['admin_email']);
+
+        $email_login=$request->post('admin_email');
+        $password=$request->post('admin_pass');
+
+        $admin_login=new ShopAdmin();
+        $user_validate=$admin_login
+        ->where('admin_email','=',$email_login)
+        ->where('admin_pass','=',$password)
+        ->count();
+
+        if ($user_validate==1) {
+            return redirect('/admin/adminpage');
+        }else{
+            return redirect('/admin')->withErrors('Acount does not Exist');
+        }
+    }
+
     public function adminPage()
     {
-        
+        return view('adminPage');
     }
 }

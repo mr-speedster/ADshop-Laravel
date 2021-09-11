@@ -6,7 +6,8 @@
 </div>
 @endsection
 @section('form')
-<form method="POST">
+<form method="POST" action="{{ route('adminLogin') }}">
+    @csrf
     <div class="words word-2">
         <span>A</span>
         <span>D</span>
@@ -23,9 +24,12 @@
                         d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
                 </svg></i>
         </div>
+        @if($errors->any())
+                <small class="text-danger">{{ implode('', $errors->all(':message')) }}</small>
+            @endif
         <div class="div">
             <h5>Admin:email</h5>
-            <input required type="text" name="email" class="input">
+            <input required type="text" name="admin_email" class="input">
         </div>
     </div>
     <div class="input-div pass">
@@ -34,7 +38,7 @@
         </div>
         <div class="div">
             <h5>Admin:Password</h5>
-            <input required type="password" name="pass" class="input">
+            <input required type="password" name="admin_pass" class="input">
         </div>
     </div>
     <button name="sign_in" type="submit" class="btn">Login</button>

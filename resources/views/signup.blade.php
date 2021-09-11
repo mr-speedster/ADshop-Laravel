@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('title','ADshop | SignUp')
 @section('form')
-<form method="POST" action="{{ route('userform') }}">
+<form method="POST" action="{{ route('usersignup') }}">
     @csrf
     <div class="words word-2">
         <span>A</span>
@@ -57,7 +57,7 @@
     </div>
     
     <div class="text-center small">
-        <a href="{{ route('signup')}}">Alredy have an account?</a>
+        <a href="{{ route('signin')}}">Alredy have an account?</a>
     </div>
     <button name="sign_up" onclick="conformPass()" type="submit" class="btn">Login</button>
 </form>

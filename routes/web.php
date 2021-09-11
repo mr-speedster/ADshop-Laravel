@@ -16,13 +16,42 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[ADshopController::class,'shop'])->name('shop');
 
+
+
 Route::get('/user/signup',[ADshopController::class,'signup'])->name('signup');
 
 Route::get('/user/signin',[ADshopController::class,'signin'])->name('signin');
 
-Route::post('/user/data',[ADshopController::class,'userData'])->name('userform');
+
+
+
+Route::post('/user/signup/data',[ADshopController::class,'userSignup'])->name('usersignup');
+
+Route::post('/user/signin/data',[ADshopController::class,'userSignin'])->name('usersignin');
+
+
+
 
 Route::get('/admin',[ADshopController::class,'admin'])->name('adminSignin');
 
-Route::get('/admin/adminpage',[ADshopController::class,'adminPage']);
+Route::post('/admin/data',[ADshopController::class,'adminLogin'])->name('adminLogin');
 
+
+Route::get('/admin/adminpage',[ADshopController::class,'adminPage'])->name('adminHome');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/signout',function(){
+    if (session()->has('user_email')) {
+        session()->pull('user_email');
+    }
+    return redirect('/');
+})->name('signout');
