@@ -245,14 +245,14 @@
             <div class="container">
               <h4 class="font-rubik font-size-20">Category</h4>
               <div id="filters" class="button-group text-right font-baloo font-size-16">
-                <button class="btn is-checked" data-filter="*">All Brand</button>
-                <button class="btn" data-filter=".Apple">Apple</button>
-                <button class="btn" data-filter=".Samsung">Samsung</button>
-                <button class="btn" data-filter=".Redmi">Redmi</button>
+                <button class="btn is-checked" data-filter="*">All Product</button>
+                <button class="btn" data-filter=".Mens">MEN</button>
+                <button class="btn" data-filter=".Womens">WOMEN</button>
+                <button class="btn" data-filter=".Kids">KIDS</button>
               </div>
 
               <div class="grid">
-                <div class="grid-item Apple border">
+                <div class="grid-item Mens border">
                  <div class="item py-2" style="width: 200px;">
                   <div class="product font-rale">
                     <a href="#"><img src="../assets/products/13.png" alt="product1" class="img-fluid"></a>
@@ -273,7 +273,7 @@
                   </div>
                 </div>
                 </div>
-                <div class="grid-item Samsung border">
+                <div class="grid-item Womens border">
                   <div class="item py-2" style="width: 200px;">
                    <div class="product font-rale">
                      <a href="#"><img src="../assets/products/11.png" alt="product1" class="img-fluid"></a>
@@ -294,7 +294,7 @@
                    </div>
                  </div>
                  </div>
-                 <div class="grid-item Redmi border">
+                 <div class="grid-item Kids border">
                   <div class="item py-2" style="width: 200px;">
                    <div class="product font-rale">
                      <a href="#"><img src="../assets/products/3.png" alt="product1" class="img-fluid"></a>
@@ -315,7 +315,7 @@
                    </div>
                  </div>
                  </div>
-                 <div class="grid-item Apple border">
+                 <div class="grid-item Mens border">
                   <div class="item py-2" style="width: 200px;">
                    <div class="product font-rale">
                      <a href="#"><img src="../assets/products/14.png" alt="product1" class="img-fluid"></a>
@@ -336,7 +336,7 @@
                    </div>
                  </div>
                  </div>
-                 <div class="grid-item Samsung border">
+                 <div class="grid-item Womens border">
                   <div class="item py-2" style="width: 200px;">
                    <div class="product font-rale">
                      <a href="#"><img src="../assets/products/12.png" alt="product1" class="img-fluid"></a>
@@ -357,7 +357,7 @@
                    </div>
                  </div>
                  </div>
-                 <div class="grid-item  Redmi border ">
+                 <div class="grid-item  Kids border ">
                   <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
@@ -380,7 +380,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="grid-item  Redmi border ">
+                <div class="grid-item  Kids border ">
                   <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
@@ -403,7 +403,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="grid-item  Redmi border ">
+                <div class="grid-item  Kids border ">
                   <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
@@ -426,7 +426,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="grid-item  Redmi border">
+                <div class="grid-item  Kids border">
                   <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
@@ -449,7 +449,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="grid-item Apple border  " >
+                <div class="grid-item Mens border  " >
                   <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
@@ -476,15 +476,6 @@
             </div>
           </section>
         <!-- !Special Price -->
-
-        <!-- Banner Ads  
-          <section id="banner_adds">
-            <div class="container py-5 text-center">
-              <img src="../assets/banner1-cr-500x150.jpg" alt="banner1" class="img-fluid">
-              <img src="../assets/banner2-cr-500x150.jpg" alt="banner1" class="img-fluid">
-            </div>
-          </section>
-        Banner Ads  -->
 
           <!-- New Phones -->
           <section id="new-phones">
