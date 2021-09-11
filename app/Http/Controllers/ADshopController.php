@@ -124,6 +124,17 @@ class ADshopController extends Controller
             $file->move('assets/images/',$file_name);
             $element->image=$file_name;
         }
-        $element->save();
+       $element->save();
+
+       return redirect('/admin/adminpage')->with('status','Successfully Added');
     }
+    
+    public function view()
+    {
+        $elements=product::all();
+        //dd($element);
+        return view('adminView',['elements'=>$elements]);
+
+    }
+    
 }
