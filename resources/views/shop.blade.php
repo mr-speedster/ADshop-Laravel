@@ -42,7 +42,7 @@
                       <a class="nav-link" href="#">On Sale</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Category</a>
+                      <a class="nav-link" href="{{route('shop')}}#special-price">Category</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
