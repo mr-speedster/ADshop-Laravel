@@ -95,7 +95,7 @@ button, button:focus {
 }
 
 /*   Special Price Section Template */
-#special-price .grid .grid-item {
+#category .grid .grid-item {
   margin-right: 1.2rem;
   margin-top: 1rem;
 }

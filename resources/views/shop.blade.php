@@ -39,10 +39,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav m-auto font-rubik">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">On Sale</a>
+                      <a class="nav-link" href="{{route('shop')}}#top-sale">Top Sale</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{route('shop')}}#special-price">Category</a>
+                      <a class="nav-link" href="{{route('shop')}}#category">Category</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
@@ -237,9 +237,9 @@
         <!-- !Top Sale -->
 
         <!-- Special Price -->
-          <section id="special-price">
+          <section id="category">
             <div class="container">
-              <h4 class="font-rubik font-size-20">Special Price</h4>
+              <h4 class="font-rubik font-size-20">Category</h4>
               <div id="filters" class="button-group text-right font-baloo font-size-16">
                 <button class="btn is-checked" data-filter="*">All Brand</button>
                 <button class="btn" data-filter=".Apple">Apple</button>
@@ -473,14 +473,14 @@
           </section>
         <!-- !Special Price -->
 
-        <!-- Banner Ads  -->
+        <!-- Banner Ads  
           <section id="banner_adds">
             <div class="container py-5 text-center">
               <img src="../assets/banner1-cr-500x150.jpg" alt="banner1" class="img-fluid">
               <img src="../assets/banner2-cr-500x150.jpg" alt="banner1" class="img-fluid">
             </div>
           </section>
-        <!-- !Banner Ads  -->
+        Banner Ads  -->
 
           <!-- New Phones -->
           <section id="new-phones">
