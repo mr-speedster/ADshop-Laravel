@@ -43,9 +43,7 @@ Route::post('/admin/product',[ADshopController::class,'product'])->name('product
 
 Route::get('/admin/view',[ADshopController::class,'view'])->name('productView');
 
-/*Route::post('/admin/view',[ADshopController::class,'listView'])->name('listView');
 
-*/
 
 
 
