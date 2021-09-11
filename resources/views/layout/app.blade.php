@@ -16,7 +16,7 @@
 	@yield('admin-user')
 	<div class="container">
 		<div class="img">
-            <img src="images/lion.svg" alt="" class="img-fluid">
+            <img src="../assets/icons/lion.svg" alt="" class="img-fluid">
 		</div>
 		<div class="login-content">
         <!--form-->

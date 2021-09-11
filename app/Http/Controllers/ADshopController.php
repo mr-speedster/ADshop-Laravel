@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\product;
 use App\Models\ShopAdmin;
 use App\Models\ShopUser;
 use Illuminate\Http\Request;
@@ -108,5 +109,21 @@ class ADshopController extends Controller
     public function adminPage()
     {
         return view('adminPage');
+    }
+
+    public function product(Request $request)
+    {
+        $element=new product();
+        $element->product_name=$request->post('product_name');
+        $element->price=$request->post('product_price');
+        
+        if ($request->hasFile('product_image')) {
+            $file=$request->file('product_image');
+            $extention=$file->getClientOriginalExtension();
+            $file_name=time().'.'.$extention;
+            $file->move('assets/images/',$file_name);
+            $element->image=$file_name;
+        }
+        $element->save();
     }
 }

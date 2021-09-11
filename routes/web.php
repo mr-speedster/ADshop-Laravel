@@ -39,7 +39,7 @@ Route::post('/admin/data',[ADshopController::class,'adminLogin'])->name('adminLo
 
 Route::get('/admin/adminpage',[ADshopController::class,'adminPage'])->name('adminHome');
 
-
+Route::post('/admin/product',[ADshopController::class,'product'])->name('product');
 
 
 
