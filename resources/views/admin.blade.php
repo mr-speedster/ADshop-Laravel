@@ -1,8 +1,8 @@
 @extends('layout.app')
 @section('title','ADshop | AdminSignIn')
 @section('admin-user')
-<div style="float: right;margin: 2%" class="container-fluid">
-    <a class="nav-link" href="/user/signin"><h3>User</h3></a>
+<div style="float: right;" class="container-fluid">
+    <a class="nav-link" href="/user/signin"><h3 class="text-info">User</h3></a>
 </div>
 @endsection
 @section('form')
