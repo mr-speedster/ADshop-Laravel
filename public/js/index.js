@@ -3,7 +3,10 @@ $(document).ready(function(){
     // banner owl carousel
     $("#banner-area .owl-carousel").owlCarousel({
         dots: true,
-        items: 1
+        items: 1,
+        autoplay:true,
+        autoplayTimeout:4000,
+        autoplayHoverPause:true
     });
 
     // top sale owl carousel
@@ -11,15 +14,18 @@ $(document).ready(function(){
         loop: true,
         nav: true,
         dots: false,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true,
         responsive : {
             0: {
-                items: 1
+                items: 2
             },
             600: {
                 items: 3
             },
             1000 : {
-                items: 5
+                items: 6
             }
         }
     });

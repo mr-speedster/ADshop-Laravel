@@ -12,7 +12,9 @@ class ADshopController extends Controller
 {
     public function shop()
     {
-        return view('shop');
+        $elements=product::all();
+        //dd($element);
+        return view('shop',['elements'=>$elements]);
     }
     
     public function signin()
@@ -116,6 +118,7 @@ class ADshopController extends Controller
         $element=new product();
         $element->product_name=$request->post('product_name');
         $element->price=$request->post('product_price');
+        $element->key=$request->post('key');
         
         if ($request->hasFile('product_image')) {
             $file=$request->file('product_image');
@@ -136,5 +139,14 @@ class ADshopController extends Controller
         return view('adminView',['elements'=>$elements]);
 
     }
+     public function cart()
+     {
+         return view('cart');
+     }
+
+     public function clickProduct()
+     {
+         return view('product');
+     }
     
 }

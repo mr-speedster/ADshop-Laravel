@@ -24,6 +24,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Image</th>
+                <th scope="col">Key</th>
                 <th scope="col">Modify</th>
                 <th scope="col">Remove</th>
                 <th><a style="text-decoration:none;" href="{{ route('adminHome') }}"><h5 class="text-success">ADD+</h5></a></th>
@@ -37,6 +38,7 @@
                     <td>{{$element->product_name}}</td>
                     <td>{{$element->price}}</td>
                     <td><img src="/assets/images/{{$element->image}}" alt=""></td>
+                    <td>{{$element->key}}</td>
                     <td><a style="text-decoration:none" href="#"><h6 class="text-warning">Update</h6></a></td>
                     <td><a style="text-decoration:none" href="#"><h6 class="text-danger">Delete</h6></a></td>
                 </tr>

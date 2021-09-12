@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[ADshopController::class,'shop'])->name('shop');
+Route::get('/',[ADshopController::class,'shop','product'])->name('shop');
 
 
 
@@ -44,7 +44,8 @@ Route::post('/admin/product',[ADshopController::class,'product'])->name('product
 Route::get('/admin/view',[ADshopController::class,'view'])->name('productView');
 
 
-
+Route::get('/cart',[ADshopController::class,'cart'])->name('cart')->name('cart');
+Route::get('/product',[ADshopController::class,'clickProduct'])->name('clickProduct');
 
 
 
