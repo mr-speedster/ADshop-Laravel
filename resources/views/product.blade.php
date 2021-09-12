@@ -11,10 +11,15 @@
                             <img src="/assets/images/{{$clickId->image}}" alt="product" class="img-fluid">
                             <div class="form-row pt-4 font-size-16 font-baloo">
                                 <div class="col">
-                                    <a href="#" class="btn btn-danger form-control">Proceed to Buy</a>
+                                    <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
                                 </div>
                                 <div class="col">
-                                    <a href="/cart" class="btn btn-warning form-control">Add to Cart</a>
+                                    <form action="/cart" method="POST">
+                                      @csrf
+                                      <input type="hidden" name="productId" value="{{$clickId->id}}">
+                                      <input type="hidden" name="productUser" value="{{session('user_email')}}">
+                                      <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +41,7 @@
                                 <table class="my-3">
                                     <tr class="font-rale font-size-14">
                                         <td>M.R.P:</td>
-                                        <td>{{$clickId->price}}</td>
+                                        <td>{{$clickId->price}}</strike></td>
                                     </tr>
                                 </table>
                             <!---    !product price       -->

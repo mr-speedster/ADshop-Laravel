@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MyCart;
 use App\Models\product;
 use App\Models\Product as ModelsProduct;
 use App\Models\ShopAdmin;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class ADshopController extends Controller
 {
+
     public function shop()
     {
         $elements=product::all();
@@ -65,7 +67,6 @@ class ADshopController extends Controller
         //dd($user_data);
         $request->session()->put('user_email',$user_data['email']);
         //dd(session('user_email'));
-        
         $email_login=$request->post('email');
         $password=$request->post('pass');
 
@@ -81,7 +82,6 @@ class ADshopController extends Controller
             return redirect('/user/signin')->withErrors('email not exist ,please SignUp');
         }
     }
-    
     public function admin()
     {
         return view('admin');
@@ -92,7 +92,6 @@ class ADshopController extends Controller
         $admin_data=$request->input();
         //dd($admin_data);
         $request->session()->put('admin_email',$admin_data['admin_email']);
-
         $email_login=$request->post('admin_email');
         $password=$request->post('admin_pass');
 
@@ -140,30 +139,37 @@ class ADshopController extends Controller
         return view('adminView',['elements'=>$elements]);
 
     }
-     public function cart()
-     {
-        //$user_data=ShopUser::all();
-        //dd($user_data);
-       // $request->session()->put('user_email',$user_data['email']);
-        //dd(session('user_email'));
-         return view('cart');
-     }
-
      public function clickProduct($id)
      {
          $clickId=Product::findOrFail($id);
-         //$name=$clickId->product_name;
-         //$price=$clickId->price;//
-         //$image=$clickId->image;
          return view('product',['clickId'=>$clickId]);
      }
 
-     public function addToCart($cartId)
-     {
-        $clickId=Product::findOrFail($cartId);
-        $user=session('user_email');
-        $userId=ShopUser::findOrFil($user['i']);
-        //dd(session('user_email'));
+     public function addToCart($id)
+     {  
+        $cartProducts=MyCart::where('user_id',$id)->get();
+        return view('cart',['cartProducts'=>$cartProducts]);
      }
+
+     public function postCart(Request $request)
+     {
+         $cart=new MyCart();
+         $cart->product_id=$request->post('productId');
+         $clickpPoduct=Product::findOrFail($request->post('productId'));
+         $user=$request->post('productUser');
+         $clickUser=ShopUser::where('user_email',$user)->first();
+         //dd($clickUser);
+         $cart->user_id=$clickUser->id;
+         $cart->product_name=$clickpPoduct->product_name;
+         $cart->price = $clickpPoduct->price;
+         $cart->cart_image = $clickpPoduct->image;
+         $cart->save();
+         $cart->all();
+         //dd($cart->user_id);
+            //dd($cartProducts);
+         return redirect('/cart/page'.'/'.$clickUser->id);
+        
+     }
+     
     
 }
