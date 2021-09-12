@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use App\Models\Product as ModelsProduct;
 use App\Models\ShopAdmin;
 use App\Models\ShopUser;
 use Illuminate\Http\Request;
@@ -133,7 +134,7 @@ class ADshopController extends Controller
     }
     
     public function view()
-    {
+    { 
         $elements=product::all();
         //dd($element);
         return view('adminView',['elements'=>$elements]);
@@ -141,12 +142,28 @@ class ADshopController extends Controller
     }
      public function cart()
      {
+        //$user_data=ShopUser::all();
+        //dd($user_data);
+       // $request->session()->put('user_email',$user_data['email']);
+        //dd(session('user_email'));
          return view('cart');
      }
 
-     public function clickProduct()
+     public function clickProduct($id)
      {
-         return view('product');
+         $clickId=Product::findOrFail($id);
+         //$name=$clickId->product_name;
+         //$price=$clickId->price;//
+         //$image=$clickId->image;
+         return view('product',['clickId'=>$clickId]);
+     }
+
+     public function addToCart($cartId)
+     {
+        $clickId=Product::findOrFail($cartId);
+        $user=session('user_email');
+        $userId=ShopUser::findOrFil($user['i']);
+        //dd(session('user_email'));
      }
     
 }

@@ -19,6 +19,56 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+        <!-- start #header -->
+        <header id="header">
+            <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
+                <p class="font-rale font-size-12 text-black-50 m-0">Ajith D | keralite | Web Developer | <a href = "mailto: abc@example.com">ajithd78564@gmail.com</a></p>
+                <div class="font-rale font-size-14">
+                  @if (session('user_email'))
+                    <a href="{{route('signout')}}" class="px-3 border-right border-left text-dark">SignOut</a>
+                  @else
+                    <a href="{{route('signin')}}" class="px-3 border-right border-left text-dark">SignIn</a>
+                  @endif
+                  <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
+                </div>
+            </div>
+
+            <!-- Primary Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
+                <a class="navbar-brand" href="{{ route('shop') }}">ADshop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav m-auto font-rubik">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{{route('shop')}}#top-sale">Top Sale</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{route('shop')}}#category">Category</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Coming Soon</a>
+                      </li>
+                  </ul>
+                  <form action="#" class="font-size-14 font-rale">
+                      <a href="#" class="py-2 rounded-pill color-primary-bg">
+                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
+                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                      </a>
+                  </form>
+                </div>
+              </nav>
+               <!-- !Primary Navigation -->
+
+        </header>
+    <!-- !start #header -->
     @yield('main')
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

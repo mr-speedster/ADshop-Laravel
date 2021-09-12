@@ -1,56 +1,5 @@
 @extends('layout.main')
 @section('main')
-    <!-- start #header -->
-        <header id="header">
-            <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-                <p class="font-rale font-size-12 text-black-50 m-0">Ajith D | keralite | Web Developer | <a href = "mailto: abc@example.com">ajithd78564@gmail.com</a></p>
-                <div class="font-rale font-size-14">
-                  @if (session('user_email'))
-                    <a href="{{route('signout')}}" class="px-3 border-right border-left text-dark">SignOut</a>
-                  @else
-                    <a href="{{route('signin')}}" class="px-3 border-right border-left text-dark">SignIn</a>
-                  @endif
-                  <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
-                </div>
-            </div>
-
-            <!-- Primary Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
-                <a class="navbar-brand" href="{{ route('shop') }}">ADshop</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav m-auto font-rubik">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="{{route('shop')}}#top-sale">Top Sale</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{route('shop')}}#category">Category</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
-                    </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Coming Soon</a>
-                      </li>
-                  </ul>
-                  <form action="#" class="font-size-14 font-rale">
-                      <a href="#" class="py-2 rounded-pill color-primary-bg">
-                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
-                      </a>
-                  </form>
-                </div>
-              </nav>
-               <!-- !Primary Navigation -->
-
-        </header>
-    <!-- !start #header -->
-
     <!-- start #main-site -->
         <main id="main-site">
 
@@ -79,7 +28,7 @@
                 <div class="owl-carousel owl-theme">
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
-                      <a href="#"><img src="../assets/TopSale/C1.webp" alt="product1" class="img-fluid"></a>
+                      <a href="{{route('shop')}}#category"><img src="../assets/TopSale/C1.webp" alt="product1" class="img-fluid"></a>
                       <div class="text-center">
                         <h6>Samsung Galaxy 10</h6>
                         <div class="rating text-warning font-size-12">
@@ -98,7 +47,7 @@
                   </div>
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
-                      <a href="#"><img src="../assets/TopSale/J1.webp" alt="product1" class="img-fluid"></a>
+                      <a href="{{route('shop')}}#category"><img src="../assets/TopSale/J1.webp" alt="product1" class="img-fluid"></a>
                       <div class="text-center">
                         <h6>Readme Note 7</h6>
                         <div class="rating text-warning font-size-12">
@@ -117,7 +66,7 @@
                   </div>
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
-                      <a href="#"><img src="../assets/TopSale/K1.webp" alt="product1" class="img-fluid"></a>
+                      <a href="{{route('shop')}}#category"><img src="../assets/TopSale/K1.webp" alt="product1" class="img-fluid"></a>
                       <div class="text-center">
                         <h6>Readme Note 7</h6>
                         <div class="rating text-warning font-size-12">
@@ -136,7 +85,7 @@
                   </div>
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
-                      <a href="#"><img src="../assets/TopSale/KT1.webp" alt="product1" class="img-fluid"></a>
+                      <a href="{{route('shop')}}#category"><img src="../assets/TopSale/KT1.webp" alt="product1" class="img-fluid"></a>
                       <div class="text-center">
                         <h6>Samsung Galaxy 10</h6>
                         <div class="rating text-warning font-size-12">
@@ -155,7 +104,7 @@
                   </div>
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
-                      <a href="#"><img src="../assets/TopSale/R1.webp" alt="product1" class="img-fluid"></a>
+                      <a href="{{route('shop')}}#category"><img src="../assets/TopSale/R1.webp" alt="product1" class="img-fluid"></a>
                       <div class="text-center">
                         <h6>Readme Note 7</h6>
                         <div class="rating text-warning font-size-12">
@@ -175,7 +124,7 @@
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
-                        <a href="#"><img  src="../assets/TopSale/S1.webp" class="img-fluid" alt="pro1"></a>
+                        <a href="{{route('shop')}}#category"><img  src="../assets/TopSale/S1.webp" class="img-fluid" alt="pro1"></a>
                         <div class="text-center">
                           <h6>Readme Note 7</h6>
                           <div class="rating text-warning font-size-12">
@@ -196,7 +145,7 @@
                   <div class="item py-2 m-2">
                     <div class="product font-rale">
                       <div class="d-flex flex-column">
-                        <a href="#"><img  src="../assets/TopSale/T1.webp" class="img-fluid" alt="pro1"></a>
+                        <a href="{{route('shop')}}#category"><img  src="../assets/TopSale/T1.webp" class="img-fluid" alt="pro1"></a>
                         <div class="text-center">
                           <h6>Readme Note 7</h6>
                           <div class="rating text-warning font-size-12">
@@ -236,7 +185,7 @@
                 <div class="grid-item {{$element->key}} border">
                   <div class="item py-2" style="width: 200px;">
                    <div class="product font-rale">
-                     <a href="#"><img src="/assets/images/{{$element->image}}" alt="" class="img-fluid"></a>
+                     <a href="/product/{{$element->id}}"><img src="/assets/images/{{$element->image}}" alt="" class="img-fluid"></a>
                      <div class="text-center">
                        <h6>{{$element->product_name}}</h6>
                        <div class="rating text-warning font-size-12">

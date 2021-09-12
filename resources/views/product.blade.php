@@ -1,55 +1,5 @@
 @extends('layout.main')
 @section('main')
-    <!-- start #header -->
-        <header id="header">
-            <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-                <p class="font-rale font-size-12 text-black-50 m-0">Jordan Calderon 430-985 Eleifend St. Duluth Washington 92611 (427) 930-5255</p>
-                <div class="font-rale font-size-14">
-                    <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-                    <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
-                </div>
-            </div>
-
-            <!-- Primary Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
-                <a class="navbar-brand" href="#">Mobile Shopee</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav m-auto font-rubik">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">On Sale</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Category</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Coming Soon</a>
-                      </li>
-                  </ul>
-                  <form action="#" class="font-size-14 font-rale">
-                      <a href="#" class="py-2 rounded-pill color-primary-bg">
-                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
-                      </a>
-                  </form>
-                </div>
-              </nav>
-               <!-- !Primary Navigation -->
-
-        </header>
-    <!-- !start #header -->
-
     <!-- start #main-site -->
         <main id="main-site">
 
@@ -58,19 +8,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="../assets/products/1.png" alt="product" class="img-fluid">
+                            <img src="/assets/images/{{$clickId->image}}" alt="product" class="img-fluid">
                             <div class="form-row pt-4 font-size-16 font-baloo">
                                 <div class="col">
-                                    <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
+                                    <a href="#" class="btn btn-danger form-control">Proceed to Buy</a>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+                                    <a href="/cart" class="btn btn-warning form-control">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 py-5">
-                            <h5 class="font-baloo font-size-20">Samsung Galaxy 10</h5>
-                            <small>by Samsung</small>
+                            <h5 class="font-baloo font-size-20">{{$clickId->product_name}}</h5>
                             <div class="d-flex">
                                 <div class="rating text-warning font-size-12">
                                     <span><i class="fas fa-star"></i></span>
@@ -87,15 +36,7 @@
                                 <table class="my-3">
                                     <tr class="font-rale font-size-14">
                                         <td>M.R.P:</td>
-                                        <td><strike>$162.00</strike></td>
-                                    </tr>
-                                    <tr class="font-rale font-size-14">
-                                        <td>Deal Price:</td>
-                                        <td class="font-size-20 text-danger">$<span>152.00</span><small class="text-dark font-size-12">&nbsp;&nbsp;Inclusive of all taxes</small></td>
-                                    </tr>
-                                    <tr class="font-rale font-size-14">
-                                        <td>You Save:</td>
-                                        <td><span class="font-size-16 text-danger">$152.00</span></td>
+                                        <td>{{$clickId->price}}</td>
                                     </tr>
                                 </table>
                             <!---    !product price       -->
@@ -177,15 +118,6 @@
                                     </div>
                                 </div>
                             <!-- !size -->
-
-
-                        </div>
-
-                        <div class="col-12">
-                            <h6 class="font-rubik">Product Description</h6>
-                            <hr>
-                            <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat inventore vero numquam error est ipsa, consequuntur temporibus debitis nobis sit, delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus, accusantium velit numquam a aliquam vitae vel?</p>
-                            <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat inventore vero numquam error est ipsa, consequuntur temporibus debitis nobis sit, delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus, accusantium velit numquam a aliquam vitae vel?</p>
                         </div>
                     </div>
                 </div>

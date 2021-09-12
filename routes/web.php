@@ -44,8 +44,8 @@ Route::post('/admin/product',[ADshopController::class,'product'])->name('product
 Route::get('/admin/view',[ADshopController::class,'view'])->name('productView');
 
 
-Route::get('/cart',[ADshopController::class,'cart'])->name('cart')->name('cart');
-Route::get('/product',[ADshopController::class,'clickProduct'])->name('clickProduct');
+Route::get('/cart/{cartId}',[ADshopController::class,'addToCart'])->name('cart')->name('cart');
+Route::get('/product/{id}',[ADshopController::class,'clickProduct'])->name('clickProduct');
 
 
 
