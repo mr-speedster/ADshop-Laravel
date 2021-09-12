@@ -39,8 +39,8 @@
                     <td>{{$element->price}}</td>
                     <td><img src="/assets/images/{{$element->image}}" alt=""></td>
                     <td>{{$element->key}}</td>
-                    <td><a style="text-decoration:none" href="#"><h6 class="text-warning">Update</h6></a></td>
-                    <td><a style="text-decoration:none" href="#"><h6 class="text-danger">Delete</h6></a></td>
+                    <td><a style="text-decoration:none" href="/update/page/{{$element->id}}"><h6 class="text-warning">Update</h6></a></td>
+                    <td><a style="text-decoration:none" href="/update/page/{{$element->id}}"><h6 class="text-danger">Delete</h6></a></td>
                 </tr>
              @endforeach
             </tbody>

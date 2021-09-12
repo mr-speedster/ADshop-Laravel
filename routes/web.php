@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ADshopController;
+use App\Http\Controllers\ModifyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,7 +51,8 @@ Route::post('/cart',[ADshopController::class,'postCart'])->name('postCart');
 
 Route::get('/product/{id}',[ADshopController::class,'clickProduct'])->name('clickProduct');
 
-
+Route::get('/update/page/{value}',[ModifyController::class,'updatePage'])->name('updatePage');
+Route::post('/update/{id}',[ModifyController::class,'update'])->name('update');
 
 
 Route::get('/signout',function(){

@@ -29,7 +29,6 @@
                   @else
                     <a href="{{route('signin')}}" class="px-3 border-right border-left text-dark">SignIn</a>
                   @endif
-                  <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
                 </div>
             </div>
 
@@ -53,12 +52,9 @@
                       <li class="nav-item">
                         <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i></a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Coming Soon</a>
-                      </li>
                   </ul>
                   <form action="#" class="font-size-14 font-rale">
-                      <a href="#" class="py-2 rounded-pill color-primary-bg">
+                      <a href="{{route('shop')}}#category" class="py-2 rounded-pill color-primary-bg">
                         <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                         <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
                       </a>
