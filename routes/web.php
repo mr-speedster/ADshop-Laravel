@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'prevent-back-history'],function(){
+
+
+
+
+
 
 Route::get('/',[ADshopController::class,'shop','product'])->name('shop');
 
@@ -63,3 +69,7 @@ Route::get('/signout',function(){
     }
     return redirect('/');
 })->name('signout');
+
+
+
+});//prevent back after logout
