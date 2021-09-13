@@ -54,6 +54,8 @@ Route::get('/product/{id}',[ADshopController::class,'clickProduct'])->name('clic
 Route::get('/update/page/{value}',[ModifyController::class,'updatePage'])->name('updatePage');
 Route::post('/update/{id}',[ModifyController::class,'update'])->name('update');
 
+Route::get('/delete/{id}',[ModifyController::class,'delete'])->name('delete');
+
 
 Route::get('/signout',function(){
     if (session()->has('user_email')) {

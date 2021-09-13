@@ -17,23 +17,25 @@ class ModifyController extends Controller
    
     public function Update(Request $request, $id)
     {
-        ($id);
-        $product=new Product();
-        $currentProduct=$product->where('id',$id)->first();
+        $currentProduct=new Product();
+        $currentProduct=Product::where('id',$id)->first();
         $currentProduct->product_name=$request->post('product_name');
         //dd($currentProduct->product_name);
         $currentProduct->price=$request->post('product_price');
         $currentProduct->key=$request->post('key');
+        $currentProduct->image=$request->post('product_image');
+        $currentProduct->save();
+        return redirect('/admin/view');
+    
+    }
 
-        if ($request->hasFile('product_image')) {
-                $file=$request->file('product_image');
-                $extention=$file->getClientOriginalExtension();
-                $file_name=time().'.'.$extention;
-                $file->move('assets/images/',$file_name);
-                $currentProduct->image=$file_name;
-            }
+    public function delete($id)
+    {
+        //$currentProduct=new Product();
+        $currentProduct=Product::where('id',$id)->first();
 
-        $product->save();
+        $currentProduct->delete();
         return redirect('/admin/view');
     }
+
 }

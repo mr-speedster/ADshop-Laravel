@@ -40,7 +40,7 @@
            
         </div>
        
-        <input required class="form-control" value="{{$current->image}}" name="product_image" type="file" id="formFile">
+        <input required class="form-control" value="{{$current->image}}" name="product_image" type="text" id="formFile">
         </div>
       <div class="input-div one">
         <div class="i">
