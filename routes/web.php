@@ -14,66 +14,53 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => 'prevent-back-history'],function(){
+
+Route::group(['middleware' => 'prevent-back-history'], function () {
 
 
 
+    Route::get('/', [ADshopController::class, 'shop', 'product'])->name('shop');
+
+    Route::get('/user/signup', [ADshopController::class, 'signup'])->name('signup');
+
+    Route::get('/user/signin', [ADshopController::class, 'signin'])->name('signin');
 
 
+    Route::post('/user/signup/data', [ADshopController::class, 'userSignup'])->name('usersignup');
 
-Route::get('/',[ADshopController::class,'shop','product'])->name('shop');
-
-
-
-Route::get('/user/signup',[ADshopController::class,'signup'])->name('signup');
-
-Route::get('/user/signin',[ADshopController::class,'signin'])->name('signin');
+    Route::post('/user/signin/data', [ADshopController::class, 'userSignin'])->name('usersignin');
 
 
+    Route::get('/admin', [ADshopController::class, 'admin'])->name('adminSignin');
+
+    Route::post('/admin/data', [ADshopController::class, 'adminLogin'])->name('adminLogin');
 
 
-Route::post('/user/signup/data',[ADshopController::class,'userSignup'])->name('usersignup');
+    Route::get('/admin/adminpage', [ADshopController::class, 'adminPage'])->name('adminHome');
 
-Route::post('/user/signin/data',[ADshopController::class,'userSignin'])->name('usersignin');
+    Route::post('/admin/product', [ADshopController::class, 'product'])->name('product');
 
-
-
-
-Route::get('/admin',[ADshopController::class,'admin'])->name('adminSignin');
-
-Route::post('/admin/data',[ADshopController::class,'adminLogin'])->name('adminLogin');
+    Route::get('/admin/view', [ADshopController::class, 'view'])->name('productView');
 
 
-Route::get('/admin/adminpage',[ADshopController::class,'adminPage'])->name('adminHome');
-
-Route::post('/admin/product',[ADshopController::class,'product'])->name('product');
-
-Route::get('/admin/view',[ADshopController::class,'view'])->name('productView');
+    Route::get('/cart/page/{id}', [ADshopController::class, 'addToCart'])->name('Getcart');
+    Route::post('/cart', [ADshopController::class, 'postCart'])->name('postCart');
 
 
-Route::get('/cart/page/{id}',[ADshopController::class,'addToCart'])->name('Getcart');
-Route::post('/cart',[ADshopController::class,'postCart'])->name('postCart');
+    Route::get('/product/{id}', [ADshopController::class, 'clickProduct'])->name('clickProduct');
+
+    Route::get('/update/page/{value}', [ModifyController::class, 'updatePage'])->name('updatePage');
+    Route::post('/update/{id}', [ModifyController::class, 'update'])->name('update');
+
+    Route::get('/delete/{id}', [ModifyController::class, 'delete'])->name('delete');
+
+    Route::get('/delete/cart/{id}', [ModifyController::class, 'deleteCart'])->name('cartDelete');
 
 
-Route::get('/product/{id}',[ADshopController::class,'clickProduct'])->name('clickProduct');
-
-Route::get('/update/page/{value}',[ModifyController::class,'updatePage'])->name('updatePage');
-Route::post('/update/{id}',[ModifyController::class,'update'])->name('update');
-
-Route::get('/delete/{id}',[ModifyController::class,'delete'])->name('delete');
-
-Route::get('/delete/cart/{id}',[ModifyController::class,'deleteCart'])->name('cartDelete');
-
-
-
-
-Route::get('/signout',function(){
-    if (session()->has('user_email')) {
-        session()->pull('user_email');
-    }
-    return redirect('/');
-})->name('signout');
-
-
-
+    Route::get('/signout', function () {
+        if (session()->has('user_email')) {
+            session()->pull('user_email');
+        }
+        return redirect('/');
+    })->name('signout');
 });//prevent back after logout

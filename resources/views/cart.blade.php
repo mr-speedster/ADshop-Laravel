@@ -15,9 +15,10 @@
                         @foreach ($cartProducts as $cartProduct)
                             <div class="row border-top py-3 mt-3">
                                 <div class="col-sm-2">
-                                  <a href="/product/{{$cartProduct->product_id}}"><img src="/assets/images/{{ $cartProduct->cart_image }}" style="height: 120px;"
-                                    alt="cart1" class="img-fluid"></a>
-                            
+                                    <a href="/product/{{ $cartProduct->product_id }}"><img
+                                            src="/assets/images/{{ $cartProduct->cart_image }}" style="height: 120px;"
+                                            alt="cart1" class="img-fluid"></a>
+
                                 </div>
                                 <div class="col-sm-8">
                                     <h5 class="font-baloo font-size-20">{{ $cartProduct->product_name }}</h5>
@@ -34,7 +35,7 @@
                                         <a href="#" class="px-2 font-rale font-size-14">20,534 ratings</a>
                                     </div>
                                     <!--  !product rating-->
-                                    <a href="/delete/cart/{{$cartProduct->id}}">Delete</a>
+                                    <a href="/delete/cart/{{ $cartProduct->id }}">Delete</a>
                                 </div>
                                 <div class="col-sm-2 text-right">
                                     <div class="font-size-20 text-danger font-baloo">
