@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MyCart;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ShopUser;
+use App\Models\ShopUser as ModelsShopUser;
 
 class ModifyController extends Controller
 {
@@ -38,4 +41,12 @@ class ModifyController extends Controller
         return redirect('/admin/view');
     }
 
+    public function deleteCart($id)
+    {
+        //$currentProduct=new Product();
+        $currentProduct=MyCart::where('id',$id)->first();
+
+        $currentProduct->delete();
+        return redirect()->back();
+    }
 }

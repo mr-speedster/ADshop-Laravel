@@ -62,6 +62,10 @@ Route::post('/update/{id}',[ModifyController::class,'update'])->name('update');
 
 Route::get('/delete/{id}',[ModifyController::class,'delete'])->name('delete');
 
+Route::get('/delete/cart/{id}',[ModifyController::class,'deleteCart'])->name('cartDelete');
+
+
+
 
 Route::get('/signout',function(){
     if (session()->has('user_email')) {
