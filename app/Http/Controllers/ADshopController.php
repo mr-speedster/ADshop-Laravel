@@ -157,6 +157,9 @@ class ADshopController extends Controller
          $cart->product_id=$request->post('productId');
          $clickpPoduct=Product::findOrFail($request->post('productId'));
          $user=$request->post('productUser');
+         if ($user==null) {
+             return view('signin');
+         }
          $clickUser=ShopUser::where('user_email',$user)->first();
          //dd($clickUser);
          $cart->user_id=$clickUser->id;
