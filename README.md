@@ -2,15 +2,15 @@
 Just a Shopping system using Laravel
 
 
--###Configuration
+###Configuration<br />
 
--#####1.clone the repository
--#####2.composer install
--#####3.npm install
--#####4.Create database and update that in .env file
--#####6.php artisan migrate
--#####7.php artisan serve
+#####1.clone the repository<br />
+#####2.composer install<br />
+#####3.npm install<br />
+#####4.Create database and update that in .env file<br />
+#####6.php artisan migrate<br />
+#####7.php artisan serve<br />
 
--####Then u can see that in port:8000
+-####Then u can see that in port:8000<br />
 
 -#ADshop
