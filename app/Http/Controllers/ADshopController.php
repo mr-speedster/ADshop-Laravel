@@ -138,14 +138,14 @@ class ADshopController extends Controller
         $element->product_name = $request->post('product_name');
         $element->price = $request->post('product_price');
         $element->key = $request->post('key');
-
-        if ($request->hasFile('product_image')) {
+        $element->image=$request->post('img_link');
+        /*if ($request->hasFile('product_image')) {
             $file = $request->file('product_image');
             $extention = $file->getClientOriginalExtension();
             $file_name = time() . '.' . $extention;
             $file->move('assets/images/', $file_name);
             $element->image = $file_name;
-        }
+        }*/
         $element->save();
 
         return redirect('/admin/adminpage')->with('status', 'Successfully Added');

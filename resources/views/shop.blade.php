@@ -191,7 +191,7 @@
                         <div class="grid-item {{ $element->key }} border">
                             <div class="item py-2" style="width: 200px;">
                                 <div class="product font-rale">
-                                    <a href="/product/{{ $element->id }}"><img src="/assets/images/{{ $element->image }}"
+                                    <a href="/product/{{ $element->id }}"><img class="img-fluid p-2" src="{{ $element->image }}"
                                             alt="" class="img-fluid"></a>
                                     <div class="text-center">
                                         <h6>{{ $element->product_name }}</h6>

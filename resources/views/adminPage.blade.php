@@ -39,7 +39,7 @@
             <div class="div">
                 <h6 class="text-black-50">Product Image</h6>
             </div>
-            <input required class="form-control" name="product_image" type="file" id="formFile">
+            <input required class="form-control" name="img_link" type="text" id="formFile">
         </div>
         <div class="input-div one">
             <div class="i">

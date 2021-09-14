@@ -43,7 +43,7 @@
                         <th scope="row">{{ $element->id }}</th>
                         <td>{{ $element->product_name }}</td>
                         <td>{{ $element->price }}</td>
-                        <td><img src="/assets/images/{{ $element->image }}" alt=""></td>
+                        <td><img src="{{ $element->image }}" alt=""></td>
                         <td>{{ $element->key }}</td>
                         <td><a style="text-decoration:none" href="/update/page/{{ $element->id }}">
                                 <h6 class="text-warning">Update</h6>
