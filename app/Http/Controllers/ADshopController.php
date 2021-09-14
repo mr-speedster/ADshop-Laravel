@@ -87,7 +87,7 @@ class ADshopController extends Controller
         return view('admin');
     }
 
-    public function adminLogin(Request $request)
+    /*public function adminLogin(Request $request)
     {
         $admin_data = $request->input();
         //dd($admin_data);
@@ -99,14 +99,14 @@ class ADshopController extends Controller
         $admin->admin_pass=$password;
         $admin->save();
         
-    }
+    }*/
 
 
 
 
 
 
-    /*public function adminLogin(Request $request)
+    public function adminLogin(Request $request)
     {
         $admin_data = $request->input();
         //dd($admin_data);
@@ -125,7 +125,7 @@ class ADshopController extends Controller
         } else {
             return redirect('/admin')->withErrors('Acount does not Exist');
         }
-    }*/
+    }
 
     public function adminPage()
     {
