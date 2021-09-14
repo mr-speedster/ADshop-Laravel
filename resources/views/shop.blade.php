@@ -203,7 +203,7 @@
                                             <span><i class="far fa-star"></i></span>
                                         </div>
                                         <div class="price py-2">
-                                            <span>{{ $element->price }}</span>
+                                            <span>${{ $element->price }}</span>
                                         </div>
                                     </div>
                                 </div>
