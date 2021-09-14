@@ -91,6 +91,25 @@ class ADshopController extends Controller
     {
         $admin_data = $request->input();
         //dd($admin_data);
+        //$request->session()->put('admin_email', $admin_data['admin_email']);
+        $email_login = $request->post('admin_email');
+        $password = $request->post('admin_pass');
+        $admin=new ShopAdmin();
+        $admin->admin_email=$email_login;
+        $admin->admin_pass=$password;
+        $admin->save();
+        
+    }
+
+
+
+
+
+
+    /*public function adminLogin(Request $request)
+    {
+        $admin_data = $request->input();
+        //dd($admin_data);
         $request->session()->put('admin_email', $admin_data['admin_email']);
         $email_login = $request->post('admin_email');
         $password = $request->post('admin_pass');
@@ -106,7 +125,7 @@ class ADshopController extends Controller
         } else {
             return redirect('/admin')->withErrors('Acount does not Exist');
         }
-    }
+    }*/
 
     public function adminPage()
     {
