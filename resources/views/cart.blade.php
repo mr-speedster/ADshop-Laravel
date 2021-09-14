@@ -16,7 +16,7 @@
                             <div class="row border-top py-3 mt-3">
                                 <div class="col-sm-2">
                                     <a href="/product/{{ $cartProduct->product_id }}"><img
-                                            src="/assets/images/{{ $cartProduct->cart_image }}" style="height: 120px;"
+                                            src="{{ $cartProduct->cart_image }}" style="height: 120px;"
                                             alt="cart1" class="img-fluid"></a>
 
                                 </div>
