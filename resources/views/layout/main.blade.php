@@ -98,7 +98,7 @@
                         <a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
                         <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
                         <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Wish List</a>
-                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newslatters</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newsletters</a>
                     </div>
                 </div>
             </div>
