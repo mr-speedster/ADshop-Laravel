@@ -1,5 +1,5 @@
 # ADshop-Laravel
-Just a Shopping system using Laravel
+A Shopping system using Laravel
 
 
 ### Configuration<br />
