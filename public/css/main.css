@@ -231,13 +231,11 @@
     line-height: 1.5;
     margin-bottom: 100px;
   }
-
   .words span {
     font-size: 4rem;
     display: inline-block;
     animation: move 5s ease-in-out infinite;
   }
-
   @keyframes move {
     0% {
       transform: translate(-30%, 0);
