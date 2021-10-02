@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class ADshopController extends Controller
 {
+//all functions for controll our shopping app
 
     public function shop()
     {
