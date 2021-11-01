@@ -7,6 +7,7 @@
         </a>
     </div>
 @endsection
+
 @section('form')
     <form method="POST" action="{{ route('adminLogin') }}">
         @csrf
