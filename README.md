@@ -11,8 +11,8 @@ A Shopping system using Laravel
 ##### 6.php artisan migrate<br />
 ##### 7.php artisan serve<br />
 
-#### Then u can see that in port:8000<br />
+#### Then u can access app in port:8000<br />
 
 ## ADshop🛍🛒
 ##### http://adshoponlineworld.herokuapp.com/
-##### orur app👆
+##### App link👆
